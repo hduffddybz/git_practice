@@ -50,11 +50,19 @@
 
 - 问题 8
 
+1. 使用编辑器对 a.txt 进行修改
+
+2. git add a.txt
+
+3. git commit --amend
+
+- 问题 9
+
 1. git checkout master
 
 2. git rebase dev
 
-- 问题 9
+- 问题 10
 
 1. git pull --rebase origin dev
 
@@ -64,9 +72,9 @@
 
 4. git rebase --continue
 
-5. 通过 git log 找到 feature3 两条提交中的先前提交的一条的提交 ID；git rebase -i ID^;这时候会自动打开编辑器，将稍后提交的一条的 pick ID 改为 squash ID；重新弹出一个窗口修改新的提交信息。
+5. 通过 git log 找到 feature3 两条提交中的先前提交的一条的提交 ID；git rebase -i ID^;这时候会自动打开编辑器，将稍后提交的一条的 pick ID 改为 squash ID；自动弹出一个窗口修改新的提交信息。
 
-- 问题 10
+- 问题 11
 
 1. git checkout master
 
