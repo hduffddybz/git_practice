@@ -79,3 +79,7 @@
 1. git checkout master
 
 2. git rebase dev
+
+- 问题 12
+
+1. git tag -a "V0.1" -m "Version 0.1:Feature 1, Feature 2, Feature 3"

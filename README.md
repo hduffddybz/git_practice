@@ -19,3 +19,5 @@
 10. 在 branch dev 进行 "Add feature 3.1" 的开发，并以 "Add feature 3.1" 来提交信息，同时一个远程分支同步了上述 8 个步骤的更改，并同时在做相同特性的开发，以 "Add feature 3.2" 进行提交，同一个特性出现了两个版本，这时候需要解决冲突，更改内容为 "Add feature 3"，并将提交信息更改为 "Add feature 3"
 
 11. 将 branch dev 合并到 branch master
+
+12. 0.1 版本开发完毕对 branch master 打标签
