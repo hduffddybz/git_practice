@@ -26,17 +26,29 @@
 
 - 问题 5
 
-1. 使用编辑器将 Initilize 改为 Initialize
+1. git checkout dev
 
-2. git add a.txt
+2. 在 a.txt 增加 Add
 
-3. git commit -s -m "Correct errors in the first commit"
+3. git stash（储藏你的工作）
+
+4. git checkout bug
+
+5. 使用编辑器将 Initilize 改为 Initialize
+
+6. git add a.txt
+
+7. git commit -s -m "Correct errors in the first commit"
 
 - 问题 6
 
 1. git checkout master
 
 2. git rebase bug
+
+3. git checkout dev
+
+4. git stash pop（在 branch dev 上应用储藏内容，并删除栈上内容）
 
 - 问题 7
 

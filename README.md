@@ -6,7 +6,7 @@
 
 4. 将 branch dev 合并到 branch master
 
-5. 发现 First commit 中的 "Initilize project" 提交错误（对应于现实开发中重大的 bug），故在 branch bug 修复该问题，并以 "Correct errors in the first commit" 来提交，在修复该 bug 的同时，在 branch dev 同时进行 Add feature2 的开发工作
+5. 在 branch dev 进行 Feature 2 开发的同时（在 a.txt 添加了 Add），发现 First commit 中的 "Initilize project" 提交错误（对应于现实开发中重大的 bug），因而在 branch dev 储藏该修改并切换到 branch bug 修复该问题，并以 "Correct errors in the first commit" 来提交
 
 6. 将 branch bug 合并到 branch master
 
