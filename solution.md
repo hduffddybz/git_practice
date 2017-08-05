@@ -2,15 +2,25 @@
 
 - 问题 1
 
+1. mkdir myrepo; cd myrepo
+
 1. git init （初始化 git 项目）
 
-2. sudo sh -c "echo \"Initilize project\" > a.txt" （在 a.txt 文件增加内容）; git add a.txt（提交到暂存区）; git commit -s -m "First commit"(提交到仓库)
+2. echo "Initilize project" > a.txt" （在 a.txt 文件增加内容）; 
+
+3. git add a.txt（提交到暂存区）; 
+
+4. git commit -s -m "First commit"(提交到仓库)
    
 - 问题 2
 
 1. git checkout -b dev
 
-2. sudo sh -c "echo \"Add feature 1\" >> a.txt"（在 a.txt 末尾添加内容）; git add a.txt（提交到暂存区）; git commit -s -m "Modify a.txt"（提交到仓库）  
+2. echo "Add feature 1" >> a.txt（在 a.txt 末尾添加内容）
+
+3. git add a.txt（提交到暂存区）; 
+
+4. git commit -s -m "Modify a.txt"（提交到仓库）  
 
 - 问题 3
 
@@ -22,7 +32,9 @@
 
 1. git checkout master
 
-2. git rebase dev
+2. [方法1] git rebase dev
+   [方法2] git merge dev
+   很多时候用rebase取代merge是更好的选择，下同。
 
 - 问题 5
 
@@ -32,7 +44,7 @@
 
 3. git stash（储藏你的工作）
 
-4. git checkout bug
+4. git checkout -b bug
 
 5. 使用编辑器将 Initilize 改为 Initialize
 
@@ -45,6 +57,7 @@
 1. git checkout master
 
 2. git rebase bug
+(或者：git merge bug)
 
 3. git checkout dev
 
@@ -54,7 +67,7 @@
 
 1. git checkout dev
 
-2. sudo sh -c "echo \"Add feature 2\" >> a.txt" 
+2. echo "Add feature 2" >> a.txt" 
 
 3. git add a.txt
 
@@ -76,7 +89,36 @@
 
 - 问题 10
 
-1. git pull --rebase origin dev
+1. 新开终端2，cd /path/to/S
+
+2. git clone /path/to/your/folder
+
+- 问题 11
+切换到终端1
+1. git remote add S /path/to/S
+
+2. git checkout dev
+
+3. 用编辑器打开 a.txt 进行修改
+
+4. git add a.txt
+
+5. git commit -s -m "Add feature 3.1"
+
+- 问题 12
+切换到终端2
+1. git checkout dev
+
+2. 用编辑器打开 a.txt 进行修改
+
+3. git add a.txt
+
+4. git commit -s -m "Add feature 3.2"
+
+- 问题 13
+切换到终端1
+1. git pull --rebase S dev
+会看到提示说有冲突
 
 2. 用编辑器打开 a.txt 手动解决冲突
 
@@ -84,14 +126,21 @@
 
 4. git rebase --continue
 
-5. 通过 git log 找到 feature3 两条提交中的先前提交的一条的提交 ID；git rebase -i ID^;这时候会自动打开编辑器，将稍后提交的一条的 pick ID 改为 squash ID；自动弹出一个窗口修改新的提交信息。
-
-- 问题 11
-
+- 问题 14
+终端1操作
 1. git checkout master
 
 2. git rebase dev
 
-- 问题 12
-
+- 问题 15
+终端1操作
 1. git tag -a "V0.1" -m "Version 0.1:Feature 1, Feature 2, Feature 3"
+
+- 问题 16
+终端2操作
+
+1. git checkout master
+
+2. git pull --rebase
+
+3. git branchn -d dev
